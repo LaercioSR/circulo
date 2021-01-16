@@ -1,4 +1,4 @@
-![Circulo App](circulo_logo.png)
+[![Circulo App](circulo_logo.png "Logo do Círculo")](https://github.com/LaercioSR/circulo/blob/master/logo.png)
 
 ## Sobre o projeto
 
