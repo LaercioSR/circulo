@@ -8,13 +8,24 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    use HasFactory, SoftDeletes;
-
+    use HasFactory;
 
     public function scopeFilterSchool($query) {
         $user = auth()->user();
         $query->join('school', 'school.id', '=', 'student.school_id')
             ->where('school.id', $user->school->id);
         return $query;
+    }
+
+    public function interest(){
+        return $this->hasMany('App\Models\Interest');
+    }
+
+    public function grade(){
+        return $this->hasMany('App\Models\Grade');
+    }
+
+    public function language(){
+        return $this->hasMany('App\Models\Language');
     }
 }

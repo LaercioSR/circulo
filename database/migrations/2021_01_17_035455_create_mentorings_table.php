@@ -16,6 +16,7 @@ class CreateMentoringsTable extends Migration
         Schema::create('mentorings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('mentor_id');
+            $table->string('title');
             $table->string('description');
             $table->enum('format', ['ONLINE', 'PRESENCIAL']);
             $table->foreign('mentor_id')->references('id')->on('students');

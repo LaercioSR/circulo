@@ -15,6 +15,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #f2f5f9;
 }
 
 ul {
@@ -28,6 +29,11 @@ ul li {
 
 p {
     margin: 0;
+}
+
+#app {
+    background-color: #f2f5f9;
+    height: 100vh;
 }
 
 @media (max-width: 414px)
@@ -139,6 +145,7 @@ p {
     .localization img {
         width: 13px !important;
         height: 13px !important;
+
         margin-right: 2px;
     }
 
@@ -185,15 +192,20 @@ p {
 
 a:link {
     text-decoration: none;
+
+
+a:link {
+    text-decoration: none;
     color: hsl(0, 0%, 50%);
 }
+
 
 
 p {
     color: hsl(0, 0%, 60%);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: arciform;
 }
 
@@ -229,6 +241,10 @@ h2 {
     color: #46ad87 !important;
 }
 
+.black {
+    color: #4d4d4d;
+}
+
 .bg-purple {
     background-color: #3C1F8D !important;
 }
@@ -246,11 +262,20 @@ h2 {
 }
 
 .pd {
-    padding: 0 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.pt {
+    padding-top: 32px;
 }
 
 .pm {
     padding: 16px 16px;
+}
+
+.lh-min {
+    line-height: 10px;
 }
 
 .mobile .navbar {
@@ -262,14 +287,51 @@ h2 {
     border: none !important;
 }
 
-.item {
+.navbar .search-area {
+    width: 300px;
+    padding: 10px;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.navbar .search-area button {
+    border: none;
+    background-color: transparent;
+}
+
+.navbar .search-area button:focus {
+    outline: none;
+}
+
+.navbar .search {
+    flex: 1;
+    height: 30px;
+    border: none;
+    outline: none;
+    font: 0.9rem;
+    padding-right: 15px;
+}
+
+.fa-search {
+    font-size: 16px;
+    color: #4d4d4d;
+}
+
+.companies-profile .item {
     border: 1px solid rgba(0,0,0,.125);
-    border-radius: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 32px 16px;
 }
 
 .side-item {
     border: 1px solid rgba(0,0,0,.125);
-    border-left: 12px solid #3C1F8D;
+    border-left: 12px solid #00ADFA;
     border-radius: 10px;
     padding: 12px;
 }
@@ -277,6 +339,7 @@ h2 {
 .side-item-blue {
     border-left-color: #00ADFA !important;
 }
+
 .companies-profile .item img {
     border-radius: 50%;
     width: 150px;
@@ -390,6 +453,7 @@ h5 {
     border-radius: 16px;
     color: #fff;
     font-weight: bold;
+
 }
 
 .skills .tag {
@@ -428,6 +492,7 @@ h5 {
 .course {
     scroll-snap-align: start;
 }
+
 
 .students-profile .topbar {
     height: 90px;
@@ -487,7 +552,6 @@ h5 {
 .tag-sm {
     text-transform: uppercase;
 }
-
 
 
 
