@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Language;
 use Illuminate\Http\Request;
-use App\Models\Company;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
-class CompanyController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +14,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
-
-        return view('', compact('companies'));        
+        //
     }
 
     /**
@@ -39,33 +34,17 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        DB::beginTransaction();
-
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-
-        $company = new Company;
-
-        $company->name = $request->name;
-        $company->cnpj = $request->cnpj;
-        $company->market_segment = $request->mark_segment;
-        $company->user = $user->id;
-
-        $company->save();
-        DB::commit();
+    {
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Language $language)
     {
         //
     }
@@ -73,10 +52,10 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Language $language)
     {
         //
     }
@@ -85,10 +64,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Language $language)
     {
         //
     }
@@ -96,13 +75,11 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Language $language)
     {
-        $company = Company::find($id);
-
-        $company->delete();
+        //
     }
 }

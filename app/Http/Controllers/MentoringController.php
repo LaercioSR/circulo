@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Mentoring;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MentoringController extends Controller
 {
@@ -30,7 +31,7 @@ class MentoringController extends Controller
             ->whereOr("mentorings.format", 'ONLINE')
             ->get();
 
-        return $mentorings;
+        return view('students.mentoring', compact('mentorings'));
     }
 
     /**

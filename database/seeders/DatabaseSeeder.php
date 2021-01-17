@@ -2,6 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Company;
+use App\Models\Job;
+use App\Models\School;
+use App\Models\Student;
+use App\Models\User;
+use App\Models\Interest;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +19,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory()->count(15)->create();
+        School::factory()->count(3)->create();
+        Interest::factory()->count(4)->create();
+        Student::factory()->count(6)->create();
+        Company::factory()->count(4)->create();
+        Job::factory()->count(6)->create();
     }
 }

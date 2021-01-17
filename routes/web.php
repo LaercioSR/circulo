@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('students.courses');
 });
+
+Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('course.index');
+Route::get('/mentoring/{id}', 'App\Http\Controllers\MentoringController@index')->name('mentoring.index');
+Route::get('/jobs', 'App\Http\Controllers\JobController@index')->name('job.index');

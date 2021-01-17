@@ -22,6 +22,7 @@ class CreateStudentsTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('city_id')->constrained()->onDelete('cascade');
             $table->foreignId('school_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('interest_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

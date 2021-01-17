@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grade;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -37,7 +38,7 @@ class GradeController extends Controller
     public function store(Request $request)
     {
         DB::beginTransaction();
-        $grade = new grade();
+        $grade = new Grade;
         $grade->student_id = $request->student_id ?? auth()->user()->id;
         $grade->year = $request->year;
         $grade->school_year = $request->school_year;
@@ -106,5 +107,12 @@ class GradeController extends Controller
     public function destroy(Grade $grade)
     {
         //
+    }
+
+    public function bestGrade(Student $student){
+        //$student = Student::where('id', $id)->first();
+        $bestGrade = collect($student->grade())->max();
+
+        return view('', compact('bestGrade'));
     }
 }
