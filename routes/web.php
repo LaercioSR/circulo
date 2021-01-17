@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/courses', 'App\Http\Controllers\CourseController@index')->name('course.index');
-Route::get('/mentoring/{id}', 'App\Http\Controllers\MentoringController@index')->name('mentoring.index');
+Route::get('/mentoring/1', 'App\Http\Controllers\MentoringController@index')->name('mentoring.index');
 Route::get('/jobs', 'App\Http\Controllers\JobController@index')->name('job.index');
 Route::get('/profile', 'App\Http\Controllers\StudentController@profile')->name('student.profile');
 Route::get('/students', 'App\Http\Controllers\CompanyController@indexStudent')->name('company.students');

@@ -103,6 +103,7 @@ p {
   .students-mentoring {
       min-height: 100vh;
   }
+
     h1 {
         font-size: 28px;
         color: #4d4d4d;
@@ -174,6 +175,15 @@ p {
 
     .students-mentoring {
         min-height: 100vh;
+    }
+
+    .students-courses .description p {
+        width: 100%;      
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .item {
@@ -469,7 +479,7 @@ h5 {
 
 .swipeView {
     display: grid;
-    grid-template-columns: repeat(8, 95%);
+    grid-template-columns: repeat(20, 95%);
     will-change: transform;
     align-content: center;
     overflow-x: auto;

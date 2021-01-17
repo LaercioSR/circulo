@@ -31,11 +31,11 @@
                                 </div>
     
                                 <div class="col-7 pt-2">
-                                    <div class="title blue">
+                                    <div class="title blue mb-0">
                                         <h2>{{$unlocked->title}}</h2>
                                     </div>
                                     
-                                    <div class="description">
+                                    <div class="description mt-0">
                                         <p>
 
                                             {{$unlocked->description}}
@@ -48,7 +48,7 @@
                                             <strong>Duração:</strong> {{$unlocked->duration}} horas
                                         </p>
                                     </div>
-                                    <div class="modality row mt-3">
+                                    <div class="modality row mt-2">
                                         <div class="col">
                                             <p>
                                                 <strong>Modalidade:</strong> {{$unlocked->format}}

@@ -38,7 +38,7 @@
             <div class="navbar-collapse collapse" id="navbarsExample04" style="">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                     <a class="nav-link" href="{{route('student.profile')}}">Perfil</a>
@@ -49,9 +49,8 @@
                     <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oportunidades de Estudo</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="{{route('course.index')}}">Cursos</a>
+                        <a class="dropdown-item" href="{{route('mentoring.index')}}">Monitoria</a>
                     </div>
                     </li>
                 </ul>
