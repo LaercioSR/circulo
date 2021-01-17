@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use App\Models\Interest;
 use App\Models\User;
+use App\Models\Student;
+use App\Models\Subject;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,6 +25,19 @@ class CompanyController extends Controller
         return view('', compact('companies'));        
     }
 
+    public function indexStudent(){
+        $students = Student::all();
+        //$students = Student::where('interest', $job->requirement);
+        foreach($students as $student){
+            $student['interest'] = Interest::where('id', $student->interest_id)->first()->name;
+            $student['subject'] = Subject::where('id', $student->subject_id)->first()->name;
+        }
+        return view('companies.students', compact('students'));
+    }
+
+    public function profile(){
+        return view('companies.profile');
+    }
     /**
      * Show the form for creating a new resource.
      *
