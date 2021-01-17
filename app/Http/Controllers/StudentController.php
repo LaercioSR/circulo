@@ -83,7 +83,18 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::beginTransaction();
+        //$student = Student::where('id', Auth::id());
+        $student = Student::where('id', $id);
+        $student->name = $student->name;
+        $student->date_birth = $request->date_birth;
+        $student->registration_number = $request->registration_number;
+        $student->school_year = $request->school_year;
+        //$table->enum('school_year', ['1_ANO', '2_ANOR', '3_ANO', '4_ANO', 'CONCLUIU']);
+        $student->user_id = Auth::id();
+        $student->city_id = $request->city_id;
+        $student->school_id = $request->school_id;
+        DB::commit();
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,11 +18,13 @@ class CourseController extends Controller
     {
         $courses = Course::all();
 
-        return view('', compact('courses'));
+        return view('students.courses', compact('courses'));
     }
 
-    public function index_filter(){
+    public function index_filter(Student $student){
         $courses = DB::table('courses')->whereIn('skills', $student->interest)->get();
+
+        return view('students.courses', compact('courses'));
     }
 
     /**

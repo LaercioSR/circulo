@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job;
-use App\Models\Student;
+use App\Models\Language;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
-class JobController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +14,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = Job::all();
-
-        return view('students.jobs', compact('jobs'));
-    }
-
-    public function index_student(){
-        $student = Auth::user()->student;
-        $jobs = DB::table('jobs')->whereIn('skills', $student->interest()->get());
-
-        return view('students.jobs', compact('jobs'));
+        //
     }
 
     /**
@@ -36,7 +24,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        return view('');
+        //
     }
 
     /**
@@ -47,23 +35,16 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        DB::beginTransaction();
-
-        $job = new Job();
-        $job->title = $request->title;
-        $job->description = $request->description;
-        $job->company_id = Auth::user()->company;
-
-        DB::commit();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $job)
+    public function show(Language $language)
     {
         //
     }
@@ -71,10 +52,10 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $job)
+    public function edit(Language $language)
     {
         //
     }
@@ -83,10 +64,10 @@ class JobController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(Request $request, Language $language)
     {
         //
     }
@@ -94,15 +75,11 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Language  $language
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Language $language)
     {
-        $job = Job::where('id', $id)->first();
-
-        $result = $job->delete();
-
-        return back($status = 302, $message = $result);
+        //
     }
 }
