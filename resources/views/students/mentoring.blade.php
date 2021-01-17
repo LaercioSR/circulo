@@ -52,10 +52,10 @@
                 </ul>
             </article>
 
-            <div class="bottom-legend mt-5">
+            <article class="bottom-legend mt-5">
                 <p>Isso é tudo por enquanto!</p>
                 <hr class="shadow-sm">
-            </div>
+            </article>
         </section>
     </section>
     

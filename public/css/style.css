@@ -59,14 +59,14 @@ p {
     line-height: 18px;
   }
 
-  .description p, .date p, .modality p {
+  .description p, .date p, .modality p, .duration p {
       font-size: 12px;
       line-height: 14px;
       font-style: italic;
       margin-bottom: 10px;
   }
 
-  .date p, .modality p {
+  .date p, .modality p, .duration p {
       font-style: normal;
       margin-bottom: 0;
   }
@@ -160,4 +160,8 @@ h1, h2, h3 {
     border-left: 12px solid #3C1F8D;
     border-radius: 10px;
     padding: 12px;
+}
+
+.side-item-blue {
+    border-left-color: #00ADFA !important;
 }
