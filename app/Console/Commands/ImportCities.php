@@ -55,4 +55,10 @@ class ImportCities extends Command
         });
         $this->info("Cidades importadas com sucesso!");
     }
+
+    protected static function getJsonCities($state_id, $state_name) {
+        $url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/{$state_id}/municipios";
+        $response = @file_get_contents($url);
+        return json_decode($response, true);
+    }
 }

@@ -20,6 +20,7 @@ class CreateStudentsTable extends Migration
             $table->string('registration_number')->nullable();
             $table->enum('school_year', ['1_ANO', '2_ANOR', '3_ANO', '4_ANO', 'CONCLUIU']);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('city_id')->constrained()->onDelete('cascade');
             $table->foreignId('school_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });

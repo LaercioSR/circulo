@@ -37,6 +37,7 @@ class GradeController extends Controller
     {
         DB::beginTransaction();
         $grade = new grade();
+        $grade->student_id = $request->student_id ?? auth()->user()->id;
         $grade->year = $request->year;
         $grade->school_year = $request->school_year;
         $grade->grade_portuguese = $request->grade_portuguese;
