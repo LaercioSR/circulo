@@ -37,17 +37,17 @@
       
             <div class="navbar-collapse collapse" id="navbarsExample04" style="">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="#">Perfil</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link " href="#">Disabled</a>
+                    <li class="nav-item active">
+                    <a class="nav-link " href="#">Vagas</a>
                     </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oportunidades de Estudo</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown04">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
@@ -55,11 +55,11 @@
                     </div>
                     </li>
                 </ul>
-                <form class="search-nav pl-md-5 ml-md-5 my-2 my-lg-0" method="POST">
+                <form class="search-nav pl-md-5 ml-md-5 my-2 my-lg-0 " >
                     @csrf
-                    <div class="search-area">
+                    <div class="search-area d-none d-lg-block d-xl-none">
                         <input type="text" hidden="true" name="option" value="titulo">
-                        <input class="search" type="text" name="filter" placeholder="Procurar notícia" aria-label="Search">
+                        <input class="search" type="text" name="filter"  aria-label="Search">
                         <button><i type="submit" class="fas fa-search"></i></button>
                     </div>
                 </form>

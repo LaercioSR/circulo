@@ -3,20 +3,10 @@
     src: url('../fonts/Arciform.otf');
 }
 
-@font-face {
-    font-family: mazzardh;
-    src: url('../fonts/mazzardh-black.otf');
-}
-
-@font-face {
-    font-family: mazzardh-italic;
-    src: url('../fonts/mazzardh-blackItalic.otf');
-}
 
 html,body
 {
     width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
@@ -25,7 +15,6 @@ html,body
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #f2f5f9;
-    overflow: hidden;
 }
 
 ul {
@@ -561,6 +550,40 @@ h5 {
 
 .tag-sm {
     text-transform: uppercase;
+}
+
+.btn-link {
+    color: hsl(0, 0%, 60%);
+    font-size: 16px;
+}
+
+.accordion {
+    margin-top: -15px;
+}
+
+.accordion h5 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.accordion .card-body {
+    padding-left: 30px;
+}
+
+.accordion .card-body .btn-add {
+    width: 100%;
+    border-radius: 6px !important;
+}
+
+.accordion .btn-link:hover {
+    text-decoration: none;
+    color: #4d4d4d;
+}
+
+.languages img {
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    background-color: hsl(0, 0%, 95%);
 }
 
 
