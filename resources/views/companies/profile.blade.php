@@ -46,7 +46,7 @@
             <section class="col-8 item">
                 <div class="row col-12 menu px-5">
                     <a href="#" class="active" >Vagas</a>
-                    <a href="#" >Estudantes</a>
+                    <a href="/students" >Estudantes</a>
                     <a href="#" >Mensagens</a>
                 </div>
                 
