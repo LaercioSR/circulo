@@ -15,6 +15,10 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('cnpj');
+            $table->enum('segmento', ['PUBLICA', 'PRIVADA']);
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
