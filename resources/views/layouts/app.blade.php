@@ -41,10 +41,13 @@
                     <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                    <a class="nav-link" href="#">Perfil</a>
+                        <a class="nav-link" href="#">Perfil</a>
                     </li>
                     <li class="nav-item active">
-                    <a class="nav-link " href="#">Vagas</a>
+                        <a class="nav-link " href="#">Vagas</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link " href="#">Mentoria</a>
                     </li>
                     <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oportunidades de Estudo</a>
