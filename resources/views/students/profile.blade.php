@@ -13,7 +13,7 @@
                 <img src=" {{url('img/person.jfif')}} ">
               </section>
               <article class="edit-icon">
-                    <a href=" {{route('')}} ">
+                    <a href=" {{route('student.info')}} ">
                         <img src="img/edit.png" alt="">
                     </a>
               </article>
