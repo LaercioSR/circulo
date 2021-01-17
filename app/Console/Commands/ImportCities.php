@@ -43,7 +43,6 @@ class ImportCities extends Command
         $this->info("Importando cidades...");
         DB::transaction(function () {
             foreach (State::all() as $state) {
-                //$this->info(var_dump($state));
                 $this->info("Importando cidades de: ".$state['name']."...");
                 $cities = $this->getJsonCities($state['id'], $state['name']);
                 foreach ($cities as $city){
