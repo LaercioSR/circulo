@@ -19,6 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('description');
             $table->integer('duration');
             $table->string('platform');
+            $table->enum('status', ['LIBERADO', 'BLOQUEADO']);
             $table->timestamps();
         });
     }
