@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\State;
+use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +20,19 @@ class JobController extends Controller
     {
         $jobs = Job::all();
 
-        return $jobs;
+        foreach($jobs as $job){
+            $job['city'] = City::where('id', $job->city_id)->first()->name;
+            $job['state'] = State::where('id', $job->state_id)->first()->name;
+        }
+
+        return view('students.jobs', compact('jobs'));
+    }
+
+    public function index_student(){
+        $student = Auth::user()->student;
+        $jobs = DB::table('jobs')->whereIn('skills', $student->interest()->get());
+
+        return view('students.jobs', compact('jobs'));
     }
 
     /**
@@ -28,7 +42,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('');
     }
 
     /**
@@ -43,10 +57,9 @@ class JobController extends Controller
 
         $job = new Job();
         $job->title = $request->title;
-        $job->descrition = $request->description;
-        $job->workload = $request->workload;
-        $job->requirements = $request->requirements;
+        $job->description = $request->description;
         $job->company_id = Auth::user()->company;
+
         DB::commit();
     }
 
@@ -94,8 +107,8 @@ class JobController extends Controller
     {
         $job = Job::where('id', $id)->first();
 
-        $job->delete();
+        $result = $job->delete();
 
-        return 'Deletado';
+        return back($status = 302, $message = $result);
     }
 }
