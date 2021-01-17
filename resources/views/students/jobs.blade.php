@@ -22,8 +22,8 @@
                                 <img src=" {{url('img/magazine-luiza.png')}} " alt="">
                             </div>
                             <div class="col-7 pr-4 pt-2 text-left d-flex align-content-between flex-wrap">
-                                <div class="titulo green">
-                                    <h2>Assistente Administrativo</h2>
+                                <div class="titulo ">
+                                    <h2 class="green">Assistente Administrativo</h2>
                                 </div>
 
                                 <div class="description">

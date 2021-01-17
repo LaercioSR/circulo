@@ -45,7 +45,7 @@ p {
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 20px !important;
         line-height: 18px;
     }
 
@@ -92,6 +92,7 @@ p {
 
     .item img {
         width: 100%;
+        height: 145px;
         object-fit: cover;
         border-radius: 10px;
     }
@@ -120,10 +121,6 @@ p {
         border-left: 12px solid #3C1F8D;
         border-radius: 10px;
         padding: 12px;
-    }
-
-    .side-item-blue {
-        border-left-color: #00ADFA !important;
     }
 }
 
@@ -169,6 +166,10 @@ h2 {
     color: #46ad87 !important;
 }
 
+.black {
+    color: #4d4d4d;
+}
+
 .bg-purple {
     background-color: #3C1F8D !important;
 }
@@ -196,6 +197,10 @@ h2 {
 
 .pm {
     padding: 16px 16px;
+}
+
+.lh-min {
+    line-height: 10px;
 }
 
 .mobile .navbar {
@@ -242,7 +247,7 @@ h2 {
     color: #4d4d4d;
 }
 
-.item {
+.companies-profile .item {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 4px;
     background-color: #fff;
@@ -256,7 +261,7 @@ h2 {
     padding: 12px;
 }
 
-.item img {
+.companies-profile .item img {
     border-radius: 50%;
     width: 150px;
 }
@@ -378,6 +383,34 @@ h5 {
     background-color: #46ad87;
 }
 
+.free-courses p {
+    font-family: arciform;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.swipeView {
+    display: grid;
+    grid-template-columns: repeat(8, 95%);
+    will-change: transform;
+    align-content: center;
+    overflow-x: auto;
+    scroll-snap-coordinate: 0 0;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+#card-swipe {
+    background-color: transparent !important;
+    border: none;
+    box-shadow: none;
+    padding: 0 !important;
+}
+
+.course {
+    scroll-snap-align: start;
+}
 
 
 
