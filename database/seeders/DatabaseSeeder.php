@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
             InterestSeeder::class,
             SubjectSeeder::class,
         ]);
-        
         User::factory()->count(15)->create();
         School::factory()->count(3)->create();
         Student::factory()->count(6)->create();
@@ -33,5 +32,8 @@ class DatabaseSeeder extends Seeder
         Job::factory()->count(6)->create();
         Course::factory()->count(15)->create();
         Mentoring::factory()->count(8)->create();
+        $this->call([
+            MentoringSeeder::class,
+        ]);
     }
 }
