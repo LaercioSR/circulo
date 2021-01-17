@@ -6,7 +6,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="mobile students-events" id="blue" >
+    <section class="mobile students-courses" id="blue" >
         <section class="circulo pm container-fluid text-center">
             <article class="title">
                 <h1>Cursos Gratuitos</h1>
@@ -16,28 +16,97 @@
             </article>
 
             <article class="mt-4">
-                <ul>
-                    <li class="side-item side-item-blue text-left shadow mb-3">
-                        <div class="title blue">
-                            <h2>Informática Básica</h2>
-                        </div>
-                        
-                        <div class="description">
-                            <p>
-                                Curso online de informática básica, Pacote Office com foco em Excel.
-                            </p>
-                        </div>
-                        
-                        <div class="duration">
-                            <p>
-                                <strong>Duração:</strong> 50 horas
-                            </p>
-                        </div>
+                <ul> 
+                <section class="card px-2 pt-3 d-block d-sm-none text-center" id="card-swipe">
+                    <div class="swipeView">
+                        <li class="item  text-left shadow-sm mr-2 mb-5">
+                            <div class="row">
+                                <div class="col-5 pr-0">
+                                    <img src=" {{url('img/computers.jfif')}} " alt="">
+                                </div>
+    
+                                <div class="col-7 pt-2">
+                                    <div class="title blue">
+                                        <h2>Informática Básica</h2>
+                                    </div>
+                                    
+                                    <div class="description">
+                                        <p>
+                                            Curso online de informática básica, Pacote Office com foco em Excel.
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="duration">
+                                        <p>
+                                            <strong>Duração:</strong> 50 horas
+                                        </p>
+                                    </div>
+                                    <div class="modality row mt-3">
+                                        <div class="col">
+                                            <p>
+                                                <strong>Modalidade:</strong> Presencial
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p>
+                                                <strong>Faculdade:</strong> Azul
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>                            
+                    </div>
+        
+                </section>
+                </ul>
+            </article>
 
-                        <div class="modality text-right">
-                            <p>
-                                Modalidade: <strong>Presencial</strong>
-                            </p>
+            <article class="">
+                <div class="text-left free-courses mb-2">
+                    <p class="black">Cursos bloqueados. </p>
+                    <p class="mt-2 lh-min green"><small>Convide 5 amigos e tenha o acesso liberado.</small></p>
+                </div>
+                <ul>  
+                    <section class="card mb-4 px-2 pt-3 d-block d-sm-none text-center" id="card-swipe">
+                        <div class="swipeView">
+                            <li class="item  text-left shadow-sm mr-2 mb-5">
+                                <div class="row">
+                                    <div class="col-5 pr-0">
+                                        <img src=" {{url('img/computers.jfif')}} " alt="">
+                                    </div>
+        
+                                    <div class="col-7 pt-2">
+                                        <div class="title blue">
+                                            <h2>Informática Básica</h2>
+                                        </div>
+                                        
+                                        <div class="description">
+                                            <p>
+                                                Curso online de informática básica, Pacote Office com foco em Excel.
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="duration">
+                                            <p>
+                                                <strong>Duração:</strong> 50 horas
+                                            </p>
+                                        </div>
+                                        <div class="modality row mt-3">
+                                            <div class="col">
+                                                <p>
+                                                    <strong>Modalidade:</strong> Presencial
+                                                </p>
+                                            </div>
+                                            <div class="col">
+                                                <p>
+                                                    <strong>Faculdade:</strong> Azul
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>  
                         </div>
                     </li>
                 </ul>
