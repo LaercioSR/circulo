@@ -6,7 +6,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="mobile students-events" id="blue" >
+    <section class="mobile students-courses" id="blue" >
         <section class="circulo pm container-fluid text-center">
             <article class="title">
                 <h1>Cursos</h1>
@@ -37,7 +37,9 @@
                                     
                                     <div class="description">
                                         <p>
+
                                             {{$unlocked->description}}
+
                                         </p>
                                     </div>
                                     
@@ -50,6 +52,7 @@
                                         <div class="col">
                                             <p>
                                                 <strong>Modalidade:</strong> {{$unlocked->format}}
+
                                             </p>
                                         </div>
                                         <div class="col">
@@ -78,6 +81,7 @@
                 <ul>  
                     <section class="card mb-4 px-2 pt-3 d-block d-sm-none text-center" id="card-swipe">
                         <div class="swipeView">
+
                             @forelse($courses_blocked as $blocked)
                             <li class="item  text-left shadow-sm mr-2 mb-5">
                                 <div class="row">
