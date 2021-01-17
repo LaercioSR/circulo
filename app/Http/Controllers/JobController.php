@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
-use App\Models\Student;
+use App\Models\State;
+use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,11 @@ class JobController extends Controller
     public function index()
     {
         $jobs = Job::all();
+
+        foreach($jobs as $job){
+            $job['city'] = City::where('id', $job->city_id)->first()->name;
+            $job['state'] = State::where('id', $job->state_id)->first()->name;
+        }
 
         return view('students.jobs', compact('jobs'));
     }
