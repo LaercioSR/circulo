@@ -23,6 +23,7 @@ class MentoringFactory extends Factory
     public function definition()
     {
         return [
+            'title' => $this->faker->word,
             'description' => $this->faker->text,
             'mentor_id' => rand(1,(Student::count())),
             'format' => $this->faker->randomElement($array = array ('ONLINE', 'PRESENCIAL')),

@@ -3,11 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Company;
+use App\Models\Course;
 use App\Models\Job;
 use App\Models\School;
 use App\Models\Student;
 use App\Models\User;
 use App\Models\Interest;
+use App\Models\Mentoring;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,5 +27,7 @@ class DatabaseSeeder extends Seeder
         Student::factory()->count(6)->create();
         Company::factory()->count(4)->create();
         Job::factory()->count(6)->create();
+        Course::factory()->count(15)->create();
+        Mentoring::factory()->count(8)->create();
     }
 }

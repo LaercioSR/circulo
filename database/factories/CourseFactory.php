@@ -26,6 +26,7 @@ class CourseFactory extends Factory
             'description' => $this->faker->text,
             'duration' => $this->faker->randomDigit,
             'platform' => $this->faker->randomElement($array = array ('Alura', 'Udemy', 'Khan Academy', 'Coursera')),
+            'status' => $this->faker->randomElement($array = array('LIBERADO', 'BLOQUEADO')),
         ];
     }
 }

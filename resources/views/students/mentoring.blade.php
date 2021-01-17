@@ -12,7 +12,8 @@
                 <h1>Mentorias</h1>
                 <p>Outros alunos estão dispostos a acompanhar seus conhecimentos, aprenda com eles.</p>
             </article>
-
+            
+            @forelse($mentorings as $mentoring)
             <article class="mt-4">
                 <ul>
                     <li class="item shadow-sm mb-3">
@@ -23,19 +24,18 @@
                             <div class="col-7 pr-4 pt-2 text-left d-flex align-content-between flex-wrap">
                                 <div>
                                     <div class="name">
-                                        <h2>Dwight</h2>
+                                        <h2>{{$mentoring->title}} - {{$mentoring->format}}</h2>
                                     </div>
                                     <div class="info">
                                         <p>
-                                           17 anos, 3º - Ensino Médio
+                                            Mentor: {{$mentoring->school_year}} - Ensino Médio
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="description mt-2">
                                     <p >
-                                        Novos caminhos para a juventude! Esse é o
-                                        tema da segunda edição do Hackathon CCR.
+                                        {{$mentoring->description}}
                                     </p>
                                 </div>
 
@@ -43,7 +43,7 @@
                                 <div class="localization row pl-3">
                                     <img src=" {{url('img/map.png')}} " width="12px">
                                     <p>
-                                        Carmo do Rio Claro, Minas Gerais
+                                        {{$mentoring->city_name}}, {{$mentoring->state_name}}
                                     </p>
                                 </div>
                             </div>
@@ -51,6 +51,9 @@
                     </li>
                 </ul>
             </article>
+            @empty
+                <p>Sem mentorias no momento...</p>
+            @endforelse
 
             <article class="bottom-legend mt-5">
                 <p>Isso é tudo por enquanto!</p>
