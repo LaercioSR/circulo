@@ -16,9 +16,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
-
-        return view('students.courses', compact('courses'));
+        $courses_unlocked = Course::where('status', 'LIBERADO')->get();
+        $courses_blocked = Course::where('status', 'BLOQUEADO')->get();
+        
+        return view('students.courses', compact('courses_unlocked', 'courses_blocked'));
     }
 
     public function index_filter(Student $student){

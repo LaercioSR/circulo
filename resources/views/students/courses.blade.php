@@ -19,10 +19,11 @@
                 <div class="text-left free-courses mb-2">
                     <p class="green">Cursos liberados</p>
                 </div>
+                
                 <ul>
-                    
                 <section class="card px-2 pt-3 d-block d-sm-none text-center" id="card-swipe">
                     <div class="swipeView">
+                        @forelse($courses_unlocked as $unlocked)
                         <li class="item  text-left shadow-sm mr-2 mb-5">
                             <div class="row">
                                 <div class="col-5 pr-0">
@@ -31,114 +32,38 @@
     
                                 <div class="col-7 pt-2">
                                     <div class="title blue">
-                                        <h2>Informática Básica</h2>
+                                        <h2>{{$unlocked->title}}</h2>
                                     </div>
                                     
                                     <div class="description">
                                         <p>
-                                            Curso online de informática básica, Pacote Office com foco em Excel.
+                                            {{$unlocked->description}}
                                         </p>
                                     </div>
                                     
                                     <div class="duration">
                                         <p>
-                                            <strong>Duração:</strong> 50 horas
+                                            <strong>Duração:</strong> {{$unlocked->duration}} horas
                                         </p>
                                     </div>
                                     <div class="modality row mt-3">
                                         <div class="col">
                                             <p>
-                                                <strong>Modalidade:</strong> Presencial
+                                                <strong>Modalidade:</strong> {{$unlocked->format}}
                                             </p>
                                         </div>
                                         <div class="col">
                                             <p>
-                                                <strong>Faculdade:</strong> Azul
+                                                <strong>Instituição:</strong> {{$unlocked->platform}}
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
-
-                        <li class="item  text-left shadow-sm mr-2 mb-5">
-                            <div class="row">
-                                <div class="col-5 pr-0">
-                                    <img src=" {{url('img/computers.jfif')}} " alt="">
-                                </div>
-    
-                                <div class="col-7 pt-2">
-                                    <div class="title blue">
-                                        <h2>Informática Básica</h2>
-                                    </div>
-                                    
-                                    <div class="description">
-                                        <p>
-                                            Curso online de informática básica, Pacote Office com foco em Excel.
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="duration">
-                                        <p>
-                                            <strong>Duração:</strong> 50 horas
-                                        </p>
-                                    </div>
-                                    <div class="modality row mt-3">
-                                        <div class="col">
-                                            <p>
-                                                <strong>Modalidade:</strong> Presencial
-                                            </p>
-                                        </div>
-                                        <div class="col">
-                                            <p>
-                                                <strong>Faculdade:</strong> Azul
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="item  text-left shadow-sm mr-2 mb-5">
-                            <div class="row">
-                                <div class="col-5 pr-0">
-                                    <img src=" {{url('img/computers.jfif')}} " alt="">
-                                </div>
-    
-                                <div class="col-7 pt-2">
-                                    <div class="title blue">
-                                        <h2>Informática Básica</h2>
-                                    </div>
-                                    
-                                    <div class="description">
-                                        <p>
-                                            Curso online de informática básica, Pacote Office com foco em Excel.
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="duration">
-                                        <p>
-                                            <strong>Duração:</strong> 50 horas
-                                        </p>
-                                    </div>
-                                    <div class="modality row mt-3">
-                                        <div class="col">
-                                            <p>
-                                                <strong>Modalidade:</strong> Presencial
-                                            </p>
-                                        </div>
-                                        <div class="col">
-                                            <p>
-                                                <strong>Faculdade:</strong> Azul
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                                
-
-                            
+                        @empty
+                            <p>Não há cursos disponíveis no momento...</p>
+                        @endforelse
                     </div>
         
                 </section>
@@ -153,6 +78,7 @@
                 <ul>  
                     <section class="card mb-4 px-2 pt-3 d-block d-sm-none text-center" id="card-swipe">
                         <div class="swipeView">
+                            @forelse($courses_blocked as $blocked)
                             <li class="item  text-left shadow-sm mr-2 mb-5">
                                 <div class="row">
                                     <div class="col-5 pr-0">
@@ -161,73 +87,38 @@
         
                                     <div class="col-7 pt-2">
                                         <div class="title blue">
-                                            <h2>Informática Básica</h2>
+                                            <h2>{{$blocked->title}}</h2>
                                         </div>
                                         
                                         <div class="description">
                                             <p>
-                                                Curso online de informática básica, Pacote Office com foco em Excel.
+                                                {{$blocked->description}}
                                             </p>
                                         </div>
                                         
                                         <div class="duration">
                                             <p>
-                                                <strong>Duração:</strong> 50 horas
+                                                <strong>Duração:</strong> {{$blocked->duration}}
                                             </p>
                                         </div>
                                         <div class="modality row mt-3">
                                             <div class="col">
                                                 <p>
-                                                    <strong>Modalidade:</strong> Presencial
+                                                    <strong>Modalidade:</strong> {{$blocked->format}}
                                                 </p>
                                             </div>
                                             <div class="col">
                                                 <p>
-                                                    <strong>Faculdade:</strong> Azul
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>    
-
-                            <li class="item  text-left shadow-sm mr-2 mb-5">
-                                <div class="row">
-                                    <div class="col-5 pr-0">
-                                        <img src=" {{url('img/computers.jfif')}} " alt="">
-                                    </div>
-        
-                                    <div class="col-7 pt-2">
-                                        <div class="title blue">
-                                            <h2>Informática Básica</h2>
-                                        </div>
-                                        
-                                        <div class="description">
-                                            <p>
-                                                Curso online de informática básica, Pacote Office com foco em Excel.
-                                            </p>
-                                        </div>
-                                        
-                                        <div class="duration">
-                                            <p>
-                                                <strong>Duração:</strong> 50 horas
-                                            </p>
-                                        </div>
-                                        <div class="modality row mt-3">
-                                            <div class="col">
-                                                <p>
-                                                    <strong>Modalidade:</strong> Presencial
-                                                </p>
-                                            </div>
-                                            <div class="col">
-                                                <p>
-                                                    <strong>Faculdade:</strong> Azul
+                                                    <strong>Instituição:</strong> {{$blocked->platform}}
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
+                            @empty
+                                <p>Sem cursos disponíveis no momento...</p>   
+                            @endforelse
                         </div>
                     </section>
                     
