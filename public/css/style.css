@@ -17,6 +17,19 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
 @media (max-width: 414px)
 {
   
@@ -30,17 +43,32 @@ body {
       line-height: 18px;
   }
 
+  .name h2 {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 0 !important;
+  }
+
+  .info p {
+      font-size: 14px;
+  }
+
   .title p {
     font-family: arciform;
     font-size: 16px;
     line-height: 18px;
   }
 
-  .description p {
+  .description p, .date p, .modality p {
       font-size: 12px;
       line-height: 14px;
       font-style: italic;
       margin-bottom: 10px;
+  }
+
+  .date p, .modality p {
+      font-style: normal;
+      margin-bottom: 0;
   }
 
   .localization img {
@@ -56,11 +84,21 @@ body {
       margin-bottom: 8px;
   }
 
-  .students-jobs .item img {
+  .item img {
       width: 100%;
       object-fit: cover;
       border-radius: 10px;
   }
+
+  .bottom-legend hr {
+      margin-top: 8px;
+      width: 35%;
+  }
+
+  .students-mentoring {
+      min-height: 100vh;
+  }
+
 }
 
 p {
@@ -71,17 +109,28 @@ h1, h2, h3 {
     font-family: arciform;
 }
 
+.bg-green {
+    background-color: #46ad87 !important;
+}
+
 .green {
-    color: #46ad87;
+    color: #46ad87 !important;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
+.bg-purple {
+    background-color: #3C1F8D !important;
 }
 
-ul li {
-    list-style: none;
+.purple {
+    color: #3C1F8D;
+}
+
+.bg-blue {
+    background-color: #00ADFA !important;
+}
+
+.blue {
+    color: #00ADFA !important;
 }
 
 .pd {
@@ -96,11 +145,6 @@ ul li {
     padding: 16px 16px;
 }
 
-.students-jobs .navbar{
-    background-color: #46ad87 !important;
-    color: #fff !important;
-}
-
 .navbar-dark {
     color: #fff !important;
     border: none !important;
@@ -109,4 +153,11 @@ ul li {
 .item {
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 10px;
+}
+
+.side-item {
+    border: 1px solid rgba(0,0,0,.125);
+    border-left: 12px solid #3C1F8D;
+    border-radius: 10px;
+    padding: 12px;
 }
