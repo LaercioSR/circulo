@@ -31,6 +31,10 @@ class StudentController extends Controller
         return view('');
     }
 
+    public function profile(){
+        return view('students.profile');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
