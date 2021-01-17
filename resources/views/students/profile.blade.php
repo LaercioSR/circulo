@@ -18,7 +18,7 @@
               <div class="student-data">
                   <h4>Ana Carla</h4>
                   <p>17 anos, 3° ano - Ensino Médio</p>
-                  <div class="localization mt-2 row justify-content-center">
+                  <div class="localization mt-2 row justify-content-center ">
                     <img src=" {{url('img/map.png')}} " width="12px">
                     <p>
                         Carmo do Rio Claro, Minas Gerais
@@ -40,7 +40,7 @@
                 </div>
               </div>
 
-              <hr class="mb-0">
+              <hr >
 
                 <div class="d-flex justify-content-center flex-wrap pm">
                     <div class="tag bg-gray mb-3">
