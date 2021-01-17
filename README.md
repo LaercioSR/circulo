@@ -7,6 +7,19 @@ Levando isso em conta, a plataforma Círculo tem por objetivo diminuir as taxas 
 
 
 ## Funcionalidades
+Existem tem 3 principais perfis na plataforma, então, iremos apresentar as funcionalidades passando por cada um.
+
+- Empresas:
+As empresas possuem como funcionalidade principal o cadastro de vagas de trabalho e a possibilidade de busca de funcionários que se adequem ao perfil desejado.
+Elas podem acessar estudantes específicos e entrar em contato com eles.
+
+- Escolas:
+As escolas são o ponto de conexão entre a empresa e o estudante, sendo assim, elas tem acesso aos estudantes que são discentes em sua instituição e podem coletar estatísticas, assim como as empresas.
+
+- Estudantes: 
+Os estudantes cadastrados podem editar e acrescentar suas informações, além de ter uma lista de cursos à sua disposição;
+O estudante também tem acessso a uma lista de mentorias/monitorias;
+Por último, mas não menos importante, o estudante tem acesso às vagas em aberto que se encaixam com o seu perfil.
 
 ## Rodando o projeto
 
