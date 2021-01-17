@@ -28,4 +28,8 @@ class Student extends Model
     public function language(){
         return $this->hasMany('App\Models\Language');
     }
+
+    public function subject(){
+        return $this->hasMany('App\Models\Subject');
+    }
 }
