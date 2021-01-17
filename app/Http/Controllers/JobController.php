@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,12 @@ class JobController extends Controller
     public function index()
     {
         $jobs = Job::all();
+
+        return $jobs;
+    }
+
+    public function index_student(Student $student){
+        $jobs = DB::table('jobs')->whereIn('skills', $student->interest)->get();
 
         return $jobs;
     }
@@ -43,10 +50,11 @@ class JobController extends Controller
 
         $job = new Job();
         $job->title = $request->title;
-        $job->descrition = $request->description;
+        $job->description = $request->description;
         $job->workload = $request->workload;
-        $job->requirements = $request->requirements;
+        $job->interested = $request->requirements;
         $job->company_id = Auth::user()->company;
+
         DB::commit();
     }
 

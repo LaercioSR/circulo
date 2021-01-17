@@ -52,6 +52,7 @@ class CompanyController extends Controller
 
         $company->name = $request->name;
         $company->cnpj = $request->cnpj;
+        $company->market_segment = $request->mark_segment;
         $company->user = $user->id;
 
         $company->save();
