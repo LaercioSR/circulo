@@ -1,0 +1,112 @@
+@font-face {
+    font-family: arciform;
+    src: url('../fonts/Arciform.otf');
+}
+
+@font-face {
+    font-family: mazzardh;
+    src: url('../fonts/mazzardh-black.otf');
+}
+
+@font-face {
+    font-family: mazzardh-italic;
+    src: url('../fonts/mazzardh-blackItalic.otf');
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 414px)
+{
+  
+  h1 {
+      font-size: 28px;
+      color: #4d4d4d;
+  }
+
+  h2 {
+      font-size: 20px;
+      line-height: 18px;
+  }
+
+  .title p {
+    font-family: arciform;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .description p {
+      font-size: 12px;
+      line-height: 14px;
+      font-style: italic;
+      margin-bottom: 10px;
+  }
+
+  .localization img {
+      width: 13px !important;
+      height: 13px;
+      margin-right: 2px;
+  }
+
+  .localization p {
+      font-family: arciform;
+      color: #4d4d4d;
+      font-size: 12px;
+      margin-bottom: 8px;
+  }
+
+  .students-jobs .item img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+  }
+}
+
+p {
+    color: hsl(0, 0%, 60%);
+}
+
+h1, h2, h3 {
+    font-family: arciform;
+}
+
+.green {
+    color: #46ad87;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+.pd {
+    padding: 0 150px;
+}
+
+.pm {
+    padding: 16px 16px;
+}
+
+.mobile .navbar {
+    padding: 16px 16px;
+}
+
+.students-jobs .navbar{
+    background-color: #46ad87 !important;
+    color: #fff !important;
+}
+
+.navbar-dark {
+    color: #fff !important;
+    border: none !important;
+}
+
+.item {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+}
