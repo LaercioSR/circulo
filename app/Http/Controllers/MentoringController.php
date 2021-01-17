@@ -16,7 +16,7 @@ class MentoringController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($city_id)
+    public function index()
     {
         // $mentorings = Mentoring::selectRaw("
         //         students.name,
