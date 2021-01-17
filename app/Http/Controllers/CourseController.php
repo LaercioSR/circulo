@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Course;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class StudentController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,13 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $courses = Course::all();
 
-        return view('', compact('students'));
+        return view('', compact('courses'));
+    }
+
+    public function index_filter(){
+        $courses = DB::table('courses')->whereIn('skills', $student->interest)->get();
     }
 
     /**
@@ -28,7 +31,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('');
+        //
     }
 
     /**
@@ -40,36 +43,32 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         DB::beginTransaction();
-        $student = new Student;
-        $student->name = $student->name;
-        $student->date_birth = $request->date_birth;
-        $student->registration_number = $request->registration_number;
-        $student->school_year = $request->school_year;
-        //$table->enum('school_year', ['1_ANO', '2_ANOR', '3_ANO', '4_ANO', 'CONCLUIU']);
-        $student->user_id = Auth::id();
-        $student->city_id = $request->city_id;
-        $student->school_id = $request->school_id;
+        $course = new Course;
+        $course->title = $request->title;
+        $course->description = $request->description;
+        $course->duration = $request->duration;
+        $course->platform = $request->platform;
         DB::commit();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Course $course)
     {
-        return view('');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Course $course)
     {
         //
     }
@@ -78,10 +77,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Course $course)
     {
         //
     }
@@ -89,11 +88,15 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $course = Course::where('id', $id)->first();
+
+        $result = $course->delete();
+
+        return back($status = 302, $message = $result);
     }
 }

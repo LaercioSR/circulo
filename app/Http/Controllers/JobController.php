@@ -19,13 +19,13 @@ class JobController extends Controller
     {
         $jobs = Job::all();
 
-        return $jobs;
+        return view('', compact('jobs'));
     }
 
     public function index_student(Student $student){
         $jobs = DB::table('jobs')->whereIn('skills', $student->interest)->get();
 
-        return $jobs;
+        return view('', compact('jobs'));
     }
 
     /**
@@ -51,8 +51,6 @@ class JobController extends Controller
         $job = new Job();
         $job->title = $request->title;
         $job->description = $request->description;
-        $job->workload = $request->workload;
-        $job->interested = $request->requirements;
         $job->company_id = Auth::user()->company;
 
         DB::commit();
@@ -102,8 +100,8 @@ class JobController extends Controller
     {
         $job = Job::where('id', $id)->first();
 
-        $job->delete();
+        $result = $job->delete();
 
-        return 'Deletado';
+        return back($status = 302, $message = $result);
     }
 }

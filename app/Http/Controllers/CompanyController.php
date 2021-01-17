@@ -19,7 +19,7 @@ class CompanyController extends Controller
     {
         $companies = Company::all();
 
-        
+        return view('', compact('companies'));        
     }
 
     /**

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Interest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class StudentController extends Controller
+class InterestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $interests = Interest::all();
 
-        return view('', compact('students'));
+        return view('', compact('interests'));
     }
 
     /**
@@ -28,7 +27,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('');
+        //
     }
 
     /**
@@ -40,36 +39,30 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         DB::beginTransaction();
-        $student = new Student;
-        $student->name = $student->name;
-        $student->date_birth = $request->date_birth;
-        $student->registration_number = $request->registration_number;
-        $student->school_year = $request->school_year;
-        //$table->enum('school_year', ['1_ANO', '2_ANOR', '3_ANO', '4_ANO', 'CONCLUIU']);
-        $student->user_id = Auth::id();
-        $student->city_id = $request->city_id;
-        $student->school_id = $request->school_id;
+        $interest = new Interest;
+        $interest->name = $request->name;
+        $interest->save();
         DB::commit();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Interest $interest)
     {
-        return view('');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Interest $interest)
     {
         //
     }
@@ -78,10 +71,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Interest $interest)
     {
         //
     }
@@ -89,10 +82,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Interest  $interest
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Interest $interest)
     {
         //
     }
