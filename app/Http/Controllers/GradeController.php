@@ -59,6 +59,7 @@ class GradeController extends Controller
         $grade->grade_sociology = $request->grade_sociology;
         $grade->attendance_sociology = $request->attendance_sociology;
         $grade->save();
+        DB::commit();
     }
 
     /**

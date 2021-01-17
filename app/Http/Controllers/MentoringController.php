@@ -51,7 +51,13 @@ class MentoringController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+        $mentoring = new Mentoring();
+        $mentoring->mentor_id = $request->mentor_id ?? auth()->user()->id;
+        $mentoring->description = $request->description;
+        $mentoring->format = $request->format;
+        $mentoring->save();
+        DB::commit();
     }
 
     /**
