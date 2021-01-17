@@ -24,4 +24,8 @@ class Student extends Model
     public function grade(){
         return $this->hasMany('App\Models\Grade');
     }
+
+    public function language(){
+        return $this->hasMany('App\Models\Language');
+    }
 }
