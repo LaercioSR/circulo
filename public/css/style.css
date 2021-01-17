@@ -1,0 +1,167 @@
+@font-face {
+    font-family: arciform;
+    src: url('../fonts/Arciform.otf');
+}
+
+@font-face {
+    font-family: mazzardh;
+    src: url('../fonts/mazzardh-black.otf');
+}
+
+@font-face {
+    font-family: mazzardh-italic;
+    src: url('../fonts/mazzardh-blackItalic.otf');
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+@media (max-width: 414px)
+{
+  
+  h1 {
+      font-size: 28px;
+      color: #4d4d4d;
+  }
+
+  h2 {
+      font-size: 20px;
+      line-height: 18px;
+  }
+
+  .name h2 {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 0 !important;
+  }
+
+  .info p {
+      font-size: 14px;
+  }
+
+  .title p {
+    font-family: arciform;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .description p, .date p, .modality p, .duration p {
+      font-size: 12px;
+      line-height: 14px;
+      font-style: italic;
+      margin-bottom: 10px;
+  }
+
+  .date p, .modality p, .duration p {
+      font-style: normal;
+      margin-bottom: 0;
+  }
+
+  .localization img {
+      width: 13px !important;
+      height: 13px;
+      margin-right: 2px;
+  }
+
+  .localization p {
+      font-family: arciform;
+      color: #4d4d4d;
+      font-size: 12px;
+      margin-bottom: 8px;
+  }
+
+  .item img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+  }
+
+  .bottom-legend hr {
+      margin-top: 8px;
+      width: 35%;
+  }
+
+  .students-mentoring {
+      min-height: 100vh;
+  }
+
+}
+
+p {
+    color: hsl(0, 0%, 60%);
+}
+
+h1, h2, h3 {
+    font-family: arciform;
+}
+
+.bg-green {
+    background-color: #46ad87 !important;
+}
+
+.green {
+    color: #46ad87 !important;
+}
+
+.bg-purple {
+    background-color: #3C1F8D !important;
+}
+
+.purple {
+    color: #3C1F8D;
+}
+
+.bg-blue {
+    background-color: #00ADFA !important;
+}
+
+.blue {
+    color: #00ADFA !important;
+}
+
+.pd {
+    padding: 0 150px;
+}
+
+.pm {
+    padding: 16px 16px;
+}
+
+.mobile .navbar {
+    padding: 16px 16px;
+}
+
+.navbar-dark {
+    color: #fff !important;
+    border: none !important;
+}
+
+.item {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+}
+
+.side-item {
+    border: 1px solid rgba(0,0,0,.125);
+    border-left: 12px solid #3C1F8D;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.side-item-blue {
+    border-left-color: #00ADFA !important;
+}
