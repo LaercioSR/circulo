@@ -88,12 +88,12 @@
                                     <div class="title">
                                         <h2 class="blue">Habilidades</h2>
                                     </div>
-                                    <div class="row pl-3 justify-content-end">
-                                        <div class="tag-sm bg-blue mr-2">
-                                            MATEMÁTICA
+                                    <div class="row col-12 ">
+                                        <div class=" tag-sm bg-blue mb-2">
+                                            Informática Básica
                                         </div>
-                                        <div class="tag-sm bg-blue">
-                                            FÍSICA
+                                        <div class=" tag-sm bg-blue mb-2">
+                                            Edição de fotos
                                         </div>
                                     </div>
                                 </div>
