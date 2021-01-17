@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use Illuminate\Http\Request;
-use App\Models\Company;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
-class CompanyController extends Controller
+class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
+        $jobs = Job::all();
 
-        
+        return $jobs;
     }
 
     /**
@@ -39,32 +38,25 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         DB::beginTransaction();
 
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-
-        $company = new Company;
-
-        $company->name = $request->name;
-        $company->cnpj = $request->cnpj;
-        $company->user = $user->id;
-
-        $company->save();
+        $job = new Job();
+        $job->title = $request->title;
+        $job->descrition = $request->description;
+        $job->workload = $request->workload;
+        $job->requirements = $request->requirements;
+        $job->company_id = Auth::user()->company;
         DB::commit();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Job $job)
     {
         //
     }
@@ -72,10 +64,10 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Job $job)
     {
         //
     }
@@ -84,10 +76,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Job $job)
     {
         //
     }
@@ -95,13 +87,15 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $company = Company::find($id);
+        $job = Job::where('id', $id)->first();
 
-        $company->delete();
+        $job->delete();
+
+        return 'Deletado';
     }
 }
