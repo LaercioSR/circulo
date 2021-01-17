@@ -17,7 +17,7 @@ class CreateSchoolsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('cnpj');
-            $table->enum('segmento', ['PUBLICA', 'PRIVADA']);
+            //$table->enum('segmento', ['PUBLICA', 'PRIVADA']);
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
