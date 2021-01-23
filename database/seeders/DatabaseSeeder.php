@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
+       /* $this->call([
             InterestSeeder::class,
             SubjectSeeder::class,
         ]);
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         Company::factory()->count(4)->create();
         Job::factory()->count(6)->create();
         Course::factory()->count(15)->create();
-        Mentoring::factory()->count(8)->create();
+        */
         $this->call([
             MentoringSeeder::class,
         ]);

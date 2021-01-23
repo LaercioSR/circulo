@@ -9,8 +9,8 @@
     <section class="mobile students-mentoring" id="blue">
         <section class="circulo pm container-fluid text-center">
             <article class="title">
-                <h1>Mentorias</h1>
-                <p>Outros alunos estão dispostos a acompanhar seus conhecimentos, aprenda com eles.</p>
+                <h1>Monitorias</h1>
+                <p>Outros alunos estão dispostos a compartilhar seus conhecimentos, aprenda com eles.</p>
             </article>
             
             @forelse($mentorings as $mentoring)
@@ -19,7 +19,7 @@
                     <li class="item shadow-sm mb-3">
                         <div class="row ">
                             <div class="col-5 pr-0">
-                                <img src=" {{url('img/magazine-luiza.png')}} " alt="">
+                                <img src=" {{url('img/books.jfif')}} " alt="">
                             </div>
                             <div class="col-7 pr-4 pt-2 text-left d-flex align-content-between flex-wrap">
                                 <div>

@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="tag bg-yellow">
-                            Mentor
+                            Monitora
                         </div>
                     </div>
                 </div>
